@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Chọn phiên bản ECMAScript để biên dịch
+    "module": "commonjs", // Kiểu module
+    "jsx": "react", // Cho phép JSX
+    "strict": true, // Kích hoạt tất cả các kiểm tra nghiêm ngặt
+    "esModuleInterop": true, // Hỗ trợ nhập khẩu các module ES
+    "skipLibCheck": true, // Bỏ qua kiểm tra các file .d.ts
+    "forceConsistentCasingInFileNames": true // Kiểm tra độ phân biệt chữ hoa chữ thường trong tên file
+  },
+  "include": [
+    "src/**/*" // Đường dẫn đến các file mã nguồn của bạn
+  ]
+}
