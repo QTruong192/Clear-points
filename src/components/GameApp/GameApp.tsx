@@ -33,8 +33,8 @@ const GameApp: React.FC = () => {
   const generateCircles = (num: number) => {
     const newCircles = Array.from({ length: num }, (_, i) => ({
       id: i + 1,
-      x: Math.random() * 80 + 10,
-      y: Math.random() * 80 + 10,
+      x: Math.random() * 85 + 1,
+      y: Math.random() * 85 + 1,
       isVisible: true,
       isClicked: false,
     }));
@@ -124,10 +124,10 @@ const GameApp: React.FC = () => {
     <div>
       <h1>
         {gameStatus === "allCleared"
-          ? "All Cleared!"
+          ? <h1 className="p_done">All Cleared!</h1>
           : gameStatus === "gameOver"
-          ? "Game Over"
-          : "LET'S PLAY"}
+          ? <h1 className="p_over">Game Over</h1>
+          : <h1 className="p_play">Let's play</h1>}
       </h1>
       <div>Points: {points}</div>
       <div>Time: {time}s</div>
@@ -141,8 +141,7 @@ const GameApp: React.FC = () => {
           disabled={isPlaying}
         />
       </div>
-      <button onClick={handlePlayReset}>{isPlaying ? "Reset" : "Play"}</button>
-
+      <button onClick={handlePlayReset}>{isPlaying ? "Restart" : "Play"}</button>
       <div className="game-area">
         {isPlaying &&
           circles.map((circle) =>
